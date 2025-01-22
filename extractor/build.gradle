@@ -25,7 +25,7 @@ checkstyleTest {
 dependencies {
     implementation project(':timeago-parser')
 
-    implementation 'commons-codec:commons-codec:1.15'
+    implementation 'commons-codec:commons-codec:1.9'
 
     implementation "com.github.TeamNewPipe:nanojson:$nanojsonVersion"
     implementation 'org.jsoup:jsoup:1.17.2'
