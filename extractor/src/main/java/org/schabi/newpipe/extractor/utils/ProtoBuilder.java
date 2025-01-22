@@ -1,10 +1,11 @@
 package org.schabi.newpipe.extractor.utils;
 
+import org.apache.commons.codec.binary.Base64;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.util.Base64;
 
 public class ProtoBuilder {
     ByteArrayOutputStream byteBuffer;
@@ -18,7 +19,7 @@ public class ProtoBuilder {
     }
 
     public String toUrlencodedBase64() {
-        final String b64 = Base64.getUrlEncoder().encodeToString(toBytes());
+        final String b64 = Base64.encodeBase64URLSafeString(toBytes());
         return URLEncoder.encode(b64, StandardCharsets.UTF_8);
     }
 
