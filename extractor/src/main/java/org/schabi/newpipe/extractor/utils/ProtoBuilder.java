@@ -19,7 +19,9 @@ public class ProtoBuilder {
     }
 
     public String toUrlencodedBase64() {
-        final String b64 = Base64.encodeBase64URLSafeString(toBytes());
+//        final String b64 = Base64.encodeBase64URLSafeString(toBytes());
+        final String b64 = com.migcomponents.migbase64.Base64.encodeToString(toBytes(), true);
+//        final String b64 = Base64.encodeBase64URLSafeString(toBytes());
         return URLEncoder.encode(b64, StandardCharsets.UTF_8);
     }
 
